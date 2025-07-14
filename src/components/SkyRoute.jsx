@@ -582,7 +582,7 @@ const SkyRoute = () => {
   const [visibleCards, setVisibleCards] = useState({});
   
   const weatherCardRefs = useRef({});
-  console.log(networkStatus)
+  // console.log(networkStatus)
   // Intersection Observer for lazy loading
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -621,12 +621,12 @@ const SkyRoute = () => {
     }
 
     const endGeocode = await geocodeLocation(end);
-    console.log('End Geocode:', endGeocode);
+    // console.log('End Geocode:', endGeocode);
     endCoords = [endGeocode.lon, endGeocode.lat];
 
 
     const routeData = await fetchRouteData(startCoords, endCoords);
-    console.log('Route Data:', routeData);
+    // console.log('Route Data:', routeData);
 
 
     if (!routeData.routes || routeData.routes.length === 0) {
@@ -636,7 +636,7 @@ const SkyRoute = () => {
     const routeObj = routeData.routes[0];
     const decodedCoords = polyline.decode(routeObj.geometry);
     const coordinates = decodedCoords.map(([lat, lng]) => [lat, lng]);
-    console.log('Decoded Coordinates:', coordinates);
+    // console.log('Decoded Coordinates:', coordinates);
     const distance = (routeObj.summary.distance / 1000).toFixed(1); 
     const duration = Math.round(routeObj.summary.duration / 60);   
 
@@ -645,13 +645,13 @@ const SkyRoute = () => {
       duration,
       coordinates
     };
-    console.log("routeObj:", routeObj);
+    // console.log("routeObj:", routeObj);
 
     setRoute(processedRoute);
    
 
     const totalPoints = coordinates.length;
-    console.log('Total Points:', totalPoints);
+    // console.log('Total Points:', totalPoints);
     const maxPoints = connectionInfo?.effectiveType === 'slow-2g' || connectionInfo?.effectiveType === '2g' ? 3 : 6;
 
     const selectedPoints = [];
@@ -664,7 +664,7 @@ const SkyRoute = () => {
         index: i
       });
     }
-    console.log('Selected Weather Points:', selectedPoints);
+    // console.log('Selected Weather Points:', selectedPoints);
     setWeatherPoints(selectedPoints);
 
   } catch (error) {
