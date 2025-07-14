@@ -31,7 +31,7 @@ It is optimized for both performance and user experience using modern **Web APIs
 
 ## 🖥️ Demo
 
-> 🔗 [Live Demo (if deployed)](https://your-deployment-link.com)
+> 🔗 [[Live Demo (if deployed)](https://your-deployment-link.com)](https://sky-route-app.vercel.app/)
 
 ![SkyRoute Screenshot](./public/screenshot.png)
 
