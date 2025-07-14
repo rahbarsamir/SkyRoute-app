@@ -35,7 +35,5 @@ It is optimized for both performance and user experience using modern **Web APIs
 
 ![SkyRoute Screenshot](./public/screenshot.png)
 
----
 
-## 📁 Project Structure
 
